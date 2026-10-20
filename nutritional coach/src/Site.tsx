@@ -88,7 +88,7 @@ function Site() {
             <a className="text-link" href={coach.linkedIn} target="_blank" rel="noreferrer">View my LinkedIn →</a>
           </div>
           <div className="about-side">
-            <img className="headshot" src={coach.headshot} alt={`${coach.name}, smiling, in a navy sports jacket`} width={468} height={420} />
+            <img className="headshot" src={coach.headshot} alt={`${coach.name}, smiling, in a navy sports jacket`} width={420} height={420} />
             <p className="post-nominals">{coach.name}, {coach.postNominals}</p>
             <dl className="credentials">
               {about.credentials.map((item) => (
