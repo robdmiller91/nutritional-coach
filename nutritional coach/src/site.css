@@ -79,6 +79,7 @@ mark.todo { background: #fbe6a6; color: #6b4e00; padding: 0 3px; border-radius: 
 .about { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, .9fr); gap: clamp(32px, 6vw, 80px); align-items: start }
 .about h2 { margin: 16px 0 20px }
 .about p { font-size: 16px; margin: 0 0 16px }
+.headshot { display: block; width: 100%; height: auto; border-radius: 4px; margin-bottom: 16px }
 .post-nominals { margin: 0 0 12px; font: 500 12px var(--mono); letter-spacing: .4px; color: var(--accent) }
 .experience { list-style: none; margin: 12px 0 0; padding: 0 0 0 16px; border-left: 1px solid var(--line) }
 .experience li { position: relative; display: grid; gap: 3px; padding: 0 0 18px }

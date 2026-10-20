@@ -12,7 +12,8 @@ export const coach = {
   email: '[hello@yourdomain.co.uk]',
   // Paste a Calendly / Cal.com / Acuity link here. Empty = the contact form is used instead.
   bookingUrl: '',
-  // Swap for a real photo of Brianna (put the file in /public and use '/brianna.jpg').
+  // Files in /public are served from the site root.
+  headshot: '/brianna.jpg',
   photo: 'https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=900&q=80',
   linkedIn: 'https://www.linkedin.com/in/brianna-gauna/',
 }
