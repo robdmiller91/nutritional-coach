@@ -212,12 +212,15 @@ function AboutPage() {
               <div key={item.label}><dt><Copy>{item.label}</Copy></dt><dd><Copy>{item.detail}</Copy></dd></div>
             ))}
           </dl>
-          <span className="card-kicker">Experience</span>
-          <ol className="experience">
-            {about.experience.map((item) => (
-              <li key={item.role}><span className="experience-dates">{item.dates}</span><strong>{item.role}</strong><small>{item.org}</small></li>
-            ))}
-          </ol>
+        </div>
+      </section>
+      <section className="section">
+        <div className="section-head">
+          <Kicker>Experience</Kicker>
+          <h2>{about.experienceHeading}</h2>
+        </div>
+        <div className="experience-grid">
+          {about.experience.map((item) => <article key={item.title}><h3>{item.title}</h3><p>{item.body}</p></article>)}
         </div>
       </section>
       <Principles />

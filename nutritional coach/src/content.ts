@@ -22,7 +22,7 @@ export const hero = {
   kicker: 'Habit-based nutrition coaching',
   title: 'Fuel that fits your training,',
   titleAccent: 'and the rest of your life.',
-  lede: 'Practical, one-to-one coaching from a Precision Nutrition certified coach and certified athletic trainer with 8+ years in sports medicine. For athletes and active people who want steadier energy, better recovery, and eating habits that hold up through busy weeks, shift work, and setbacks.',
+  lede: 'Practical, one-to-one coaching from a Precision Nutrition certified coach and certified athletic trainer with 9+ years in sports medicine. For athletes and active people who want steadier energy, better recovery, and eating habits that hold up through busy weeks, shift work, and setbacks.',
   primaryCta: 'Book a free discovery call',
   secondaryCta: 'How coaching works',
 }
@@ -31,25 +31,31 @@ export const hero = {
 export const about = {
   heading: `Hi, I'm Brianna.`,
   paragraphs: [
-    `I'm a certified athletic trainer: a sports medicine professional trained in injury prevention, emergency care, and rehabilitation for active people. I've spent more than eight years keeping people healthy and performing, from university athletes to professional footballers to military personnel.`,
-    `I started as a graduate assistant athletic trainer at Wayne State University, then worked with Henry Ford Health as the athletic trainer for Detroit City Football Club. Since 2022 I've been a tactical athletic trainer with a human performance team in Europe, supporting people whose jobs depend on staying fit, resilient, and ready.`,
+    `I'm a certified athletic trainer: a sports medicine professional trained in injury prevention, emergency care, and rehabilitation for active people. For more than nine years I've kept athletes healthy and performing in some of the most demanding environments in sport and service.`,
     `Across all of it, I kept seeing the same thing: training plans are carefully built, but fuelling is left to chance. That's why I trained as a Precision Nutrition certified nutrition coach. I coach nutrition the way I'd approach a return-to-play plan. We start where you are, pick one meaningful focus each week, practise a few small actions that fit your schedule, and adjust based on how things actually go. No meal plans, no rules. And when something needs clinical input, I'll work with your clinician rather than guess.`,
   ],
   credentials: [
+    { label: 'BS, Athletic Training', detail: 'Western Michigan University, 2016' },
+    { label: 'MA, Sports Administration', detail: 'Wayne State University, 2019' },
     { label: 'Precision Nutrition Level 1 Certified Nutrition Coach', detail: 'Precision Nutrition, 2026' },
     { label: 'Certified Athletic Trainer (ATC)', detail: 'Board of Certification for the Athletic Trainer, 2017' },
-    { label: 'Licensed Athletic Trainer (AT)', detail: 'State of Michigan, 2017' },
     { label: 'Performance Enhancement Specialist (PES)', detail: 'National Academy of Sports Medicine, 2021' },
     { label: 'CrossFit Level 2 Trainer', detail: 'CrossFit, 2024' },
-    { label: 'MA, Sports Administration', detail: 'Wayne State University, 2019' },
-    { label: 'BS, Athletic Training', detail: 'Western Michigan University, 2016' },
-    { label: 'Project Management Professional (PMP)', detail: 'Project Management Institute, 2024' },
-    { label: 'Basic Life Support (BLS)', detail: 'American Red Cross, 2022' },
   ],
+  experienceHeading: '9+ years supporting athletes',
   experience: [
-    { role: 'Tactical Athletic Trainer', org: 'Human performance programme, Europe', dates: '2022 – present' },
-    { role: 'Athletic Trainer, Detroit City FC', org: 'Henry Ford Health', dates: '2019 – 2020' },
-    { role: 'Graduate Assistant Athletic Trainer', org: 'Wayne State University', dates: '2017 – 2019' },
+    {
+      title: 'NCAA Division I & II American football',
+      body: 'Injury prevention, rehab, and return-to-play for collegiate American football programmes, where heavy training loads and long seasons make fuelling and recovery essential.',
+    },
+    {
+      title: `Professional men's football`,
+      body: `Matchday and training-week care for a professional men's football (soccer) club, helping players manage busy fixture schedules and return from injury.`,
+    },
+    {
+      title: 'US military',
+      body: 'Working alongside military personnel as a tactical athletic trainer, supporting people whose jobs depend on staying fit, resilient, and ready around demanding, unpredictable schedules.',
+    },
   ],
 }
 
@@ -121,7 +127,7 @@ export const pageIntros = {
   about: {
     kicker: 'About',
     title: 'Sports medicine experience, applied to everyday fuelling.',
-    lede: 'Eight years as an athletic trainer taught me how people actually change their habits: one small, well-chosen step at a time.',
+    lede: 'Nine years as an athletic trainer taught me how people actually change their habits: one small, well-chosen step at a time.',
   },
   offer: {
     kicker: 'What I offer',
@@ -146,7 +152,7 @@ export const pageIntros = {
 }
 
 export const homeIntro = {
-  body: `Certified athletic trainer, Precision Nutrition coach, and former athletic trainer to professional footballers. I help active people build fuelling habits that actually last.`,
+  body: `Certified athletic trainer and Precision Nutrition coach, with 9+ years supporting athletes in NCAA football, professional men's football, and the US military. I help active people build fuelling habits that actually last.`,
 }
 
 // TESTIMONIALS: add real ones only, with the client's written permission.
