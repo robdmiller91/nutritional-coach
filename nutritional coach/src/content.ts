@@ -23,7 +23,7 @@ export const hero = {
   title: 'Fuel that fits your training,',
   titleAccent: 'and the rest of your life.',
   lede: 'Practical, one-to-one coaching from a Precision Nutrition certified coach and certified athletic trainer with 8+ years in sports medicine. For athletes and active people who want steadier energy, better recovery, and eating habits that hold up through busy weeks, shift work, and setbacks.',
-  primaryCta: 'Book a free intro call',
+  primaryCta: 'Book a free discovery call',
   secondaryCta: 'How coaching works',
 }
 
@@ -61,13 +61,13 @@ export const audiences = [
 ]
 
 export const steps = [
-  { number: '01', title: 'Free intro call', body: '20 minutes to talk about your training, your week, and what you want to change. No pressure to sign up.' },
+  { number: '01', title: 'Free discovery call', body: '20 minutes to talk about your training, your week, and what you want to change. No pressure to sign up.' },
   { number: '02', title: 'First session', body: 'We map your schedule, sport, and current habits, then agree on one "big rock" to focus on first.' },
   { number: '03', title: 'Weekly actions', body: 'Two or three small, specific actions each week, written up so you always know what you are practising.' },
   { number: '04', title: 'Check-ins', body: 'Short regular conversations about what worked and what got in the way. The programme adjusts to you, not the other way round.' },
 ]
 
-// PRICING: set real prices before publishing. Leave `price` as '' to show "Pricing discussed on your intro call".
+// PRICING: set real prices before publishing. Leave `price` as '' to show "Pricing discussed on your discovery call".
 export const packages = [
   {
     name: 'Foundations',
@@ -108,10 +108,57 @@ export const faqs = [
   { q: 'Is coaching online or in person?', a: `Sessions are by video call, so you can work with me from anywhere in the UK. [Add in-person availability around Cambridge if you offer it.]` },
   { q: 'I have an injury or medical condition. Can you help?', a: `I can help you build supportive nutrition habits, and I'll work alongside your GP, physio, or dietitian. I don't diagnose or treat medical conditions, and I'll always tell you when something needs a clinician.` },
   { q: 'Do I need to track calories or macros?', a: `Not unless it genuinely helps you. Most clients make progress by focusing on routines: what to eat around training, how to plan for busy days, and how to recover well.` },
-  { q: 'What happens on the free intro call?', a: `We talk about your training and what you'd like to change, I explain how coaching works, and you decide whether it feels like a good fit. That's it.` },
+  { q: 'What happens on the free discovery call?', a: `We talk about your training and what you'd like to change, I explain how coaching works, and you decide whether it feels like a good fit. That's it.` },
 ]
 
 export const closing = {
   title: 'Ready to make fuelling the easy part?',
-  body: 'Book a free 20-minute intro call. Tell me about your training and your week, and we will work out a sensible first step together.',
+  body: 'Book a free 20-minute discovery call. Tell me about your training and your week, and we will work out a sensible first step together.',
+}
+
+// Short introductions shown at the top of each page.
+export const pageIntros = {
+  about: {
+    kicker: 'About',
+    title: 'Sports medicine experience, applied to everyday fuelling.',
+    lede: 'Eight years as an athletic trainer taught me how people actually change their habits: one small, well-chosen step at a time.',
+  },
+  offer: {
+    kicker: 'What I offer',
+    title: 'Coaching that fits around your training.',
+    lede: 'One-to-one nutrition coaching by video call. Clear weekly focus, practical actions, and regular check-ins to keep things moving.',
+  },
+  testimonials: {
+    kicker: 'Testimonials',
+    title: 'What clients say.',
+    lede: 'Real feedback from real clients, shared with their permission.',
+  },
+  faq: {
+    kicker: 'FAQ',
+    title: 'Good questions.',
+    lede: `If yours isn't here, ask it on a free discovery call.`,
+  },
+  discovery: {
+    kicker: 'Free discovery call',
+    title: `Let's talk about your training.`,
+    lede: 'A relaxed 20-minute video call to see whether coaching is right for you. No preparation needed and no pressure to sign up.',
+  },
+}
+
+export const homeIntro = {
+  body: `Certified athletic trainer, Precision Nutrition coach, and former athletic trainer to professional footballers. I help active people build fuelling habits that actually last.`,
+}
+
+// TESTIMONIALS: add real ones only, with the client's written permission.
+// Use first name + initial (or initials only) unless the client asks otherwise.
+// e.g. { quote: '...', name: 'Sarah K.', context: 'Amateur triathlete, Foundations programme' }
+export const testimonials: { quote: string; name: string; context: string }[] = []
+
+export const discoveryCall = {
+  expect: [
+    { title: 'Your training and your week', body: 'What you do, when you do it, and what a normal day of eating looks like.' },
+    { title: 'What you want to change', body: 'Energy, recovery, performance, routine. Whatever matters most to you right now.' },
+    { title: 'How coaching would work', body: 'What a first session looks like, the coaching options, and pricing.' },
+    { title: 'Whether it feels right', body: 'You decide afterwards. No hard sell, no follow-up pressure.' },
+  ],
 }

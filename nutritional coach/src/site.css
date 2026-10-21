@@ -54,6 +54,9 @@ mark.todo { background: #fbe6a6; color: #6b4e00; padding: 0 3px; border-radius: 
 .site-nav { display: flex; align-items: center; gap: 28px; font-size: 14px }
 .site-nav > a:not(.button) { text-decoration: none; color: var(--text) }
 .site-nav > a:not(.button):hover { color: var(--accent) }
+.site-nav > a { position: relative }
+.site-nav > a[aria-current="page"]:not(.button) { color: var(--accent); font-weight: 600 }
+.site-nav > a[aria-current="page"]:not(.button)::after { content: ''; position: absolute; left: 0; right: 0; bottom: -6px; height: 2px; background: var(--accent) }
 .menu-toggle { display: none; border: 1px solid var(--line); background: var(--paper); border-radius: 3px; padding: 8px 12px; font-size: 13px; cursor: pointer }
 
 /* Hero */
@@ -148,18 +151,62 @@ mark.todo { background: #fbe6a6; color: #6b4e00; padding: 0 3px; border-radius: 
 .contact-form .button { margin-top: 16px; justify-self: start }
 .form-note { margin: 4px 0 0; font-size: 12px; color: var(--muted) }
 
-.site-footer { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 26px clamp(18px, 5vw, 64px); border-top: 1px solid var(--line); font: 11px var(--mono); color: var(--muted) }
+/* Inner pages */
+.page-intro { max-width: 1240px; margin: 0 auto; padding: clamp(48px, 7vw, 88px) clamp(18px, 5vw, 64px) clamp(32px, 4vw, 48px) }
+.page-intro h1 { font: 400 clamp(34px, 5vw, 56px)/1.1 var(--serif); margin: 18px 0 18px; max-width: 820px; letter-spacing: -.4px }
+.page-intro .lede { margin: 0 }
+.section-more { margin: 32px 0 0 }
+
+.meet { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: clamp(28px, 5vw, 56px); align-items: center }
+.meet .headshot { width: 100%; margin: 0 }
+.meet h2 { margin: 14px 0 12px }
+.meet p { font-size: 17px; max-width: 620px; margin: 0 0 14px }
+
+.cta-band { display: flex; align-items: center; justify-content: space-between; gap: 32px; background: var(--tint); padding: clamp(36px, 5vw, 56px) clamp(18px, 5vw, 64px) }
+.cta-band h2 { font-size: clamp(26px, 3.4vw, 34px) }
+.cta-band p { margin: 10px 0 0; max-width: 620px }
+.cta-band .button { flex: 0 0 auto }
+@media (min-width: 1240px) { .cta-band { padding-inline: calc((100vw - 1240px) / 2 + 64px) } }
+
+.testimonial-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 24px }
+.testimonial-grid figure { margin: 0; background: var(--paper); border: 1px solid var(--line); padding: 28px; display: flex; flex-direction: column; gap: 20px }
+.testimonial-grid blockquote { margin: 0; font: 400 18px/1.5 var(--serif); color: var(--ink) }
+.testimonial-grid figcaption { display: grid; gap: 3px; margin-top: auto; font-size: 14px }
+.testimonial-grid figcaption span { color: var(--muted); font-size: 13px }
+.empty-state { max-width: 640px; background: var(--signal-tint); padding: clamp(28px, 4vw, 44px); border-radius: 3px }
+.empty-state h2 { margin: 10px 0 12px }
+.empty-state p { margin: 0 0 12px }
+.empty-state .founding-spots { display: block; margin: 0 0 22px }
+
+.expect-list { list-style: none; margin: 18px 0 28px; padding: 0; counter-reset: expect }
+.expect-list li { counter-increment: expect; display: grid; gap: 4px; padding: 16px 0 16px 44px; border-bottom: 1px solid var(--line); position: relative }
+.expect-list li::before { content: counter(expect, decimal-leading-zero); position: absolute; left: 0; top: 18px; font: 500 12px var(--mono); color: var(--signal) }
+.expect-list strong { color: var(--ink) }
+.expect-list span { font-size: 14px; color: var(--muted) }
+.form-title { font-size: 24px; margin-bottom: 4px }
+
+.site-footer { display: grid; gap: 18px; padding: 30px clamp(18px, 5vw, 64px); border-top: 1px solid var(--line); font: 11px var(--mono); color: var(--muted) }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 10px 24px; font: 14px 'DM Sans', sans-serif }
+.footer-nav a { text-decoration: none; color: var(--text) }
+.footer-nav a:hover { color: var(--accent) }
+.footer-meta { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap }
 
 @media (max-width: 960px) {
   .audience-grid, .steps, .principles { grid-template-columns: repeat(2, minmax(0, 1fr)) }
 }
 
-@media (max-width: 780px) {
+@media (max-width: 1080px) {
   .menu-toggle { display: block }
-  .site-nav { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; background: var(--canvas); border-bottom: 1px solid var(--line); padding: 8px 18px 18px }
+  .site-nav { display: none; position: absolute; top: 100%; left: 0; right: 0; flex-direction: column; align-items: stretch; gap: 0; background: var(--canvas); border-bottom: 1px solid var(--line); padding: 8px clamp(18px, 5vw, 64px) 18px }
   .site-nav.open { display: flex }
   .site-nav > a:not(.button) { padding: 14px 0; border-bottom: 1px solid var(--line) }
+  .site-nav > a[aria-current="page"]:not(.button)::after { display: none }
   .site-nav .button { margin-top: 14px; justify-content: center }
+}
+
+@media (max-width: 780px) {
+  .meet { grid-template-columns: 1fr; justify-items: start }
+  .cta-band { flex-direction: column; align-items: flex-start }
   .hero, .about, .faq, .contact, .package-grid { grid-template-columns: 1fr }
   .hero-visual { min-height: 360px }
   .founding { flex-wrap: wrap }
