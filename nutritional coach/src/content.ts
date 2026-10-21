@@ -162,3 +162,7 @@ export const discoveryCall = {
     { title: 'Whether it feels right', body: 'You decide afterwards. No hard sell, no follow-up pressure.' },
   ],
 }
+
+// DESIGN: the look visitors see. Options: 'sage' | 'performance' | 'clinical' | 'earth'.
+// Preview the others with the switcher (shown in `npm run dev`, or add ?designs to the live URL).
+export const siteDesign = 'sage'

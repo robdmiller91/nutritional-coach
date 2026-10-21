@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import Site from './Site'
 import './site.css'
+import './designs.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

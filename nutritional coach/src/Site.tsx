@@ -2,8 +2,38 @@ import { createContext, useContext, useEffect, useState } from 'react'
 import type { FormEvent, MouseEvent, ReactNode } from 'react'
 import {
   about, audiences, closing, coach, discoveryCall, faqs, foundingOffer, hero, homeIntro,
-  packages, pageIntros, principles, steps, testimonials,
+  packages, pageIntros, principles, siteDesign, steps, testimonials,
 } from './content'
+
+const designs = [
+  { id: 'sage', label: 'Sage', note: 'Calm and editorial: cream, sage green, elegant serif.' },
+  { id: 'performance', label: 'Performance', note: 'Bold and athletic: dark hero, condensed capitals, orange accent.' },
+  { id: 'clinical', label: 'Clinical', note: 'Clean and trustworthy: white, navy and teal, rounded cards.' },
+  { id: 'earth', label: 'Earth', note: 'Warm and boutique: terracotta, italic serif, arched photo.' },
+]
+const designKey = 'site-design-preview'
+const showDesignSwitcher = import.meta.env.DEV || new URLSearchParams(window.location.search).has('designs')
+
+function initialDesign() {
+  if (!showDesignSwitcher) return siteDesign
+  try {
+    const stored = localStorage.getItem(designKey)
+    if (stored && designs.some((design) => design.id === stored)) return stored
+  } catch { /* storage unavailable: fall back to default */ }
+  return siteDesign
+}
+
+function DesignSwitcher({ design, onChange }: { design: string; onChange: (id: string) => void }) {
+  return (
+    <div className="design-switcher" role="group" aria-label="Preview design">
+      <span>DESIGN</span>
+      {designs.map((option) => (
+        <button key={option.id} aria-pressed={design === option.id} onClick={() => onChange(option.id)}>{option.label}</button>
+      ))}
+      <small>{designs.find((option) => option.id === design)?.note}</small>
+    </div>
+  )
+}
 
 const pages = [
   { path: '/', label: 'Home', title: `${coach.name} | Nutrition coaching for people who train` },
@@ -347,6 +377,13 @@ const pageComponents: Record<string, () => ReactNode> = {
 function Site() {
   const [path, setPath] = useState(currentPath)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [design, setDesign] = useState(initialDesign)
+
+  useEffect(() => {
+    document.documentElement.dataset.design = design
+    if (!showDesignSwitcher) return
+    try { localStorage.setItem(designKey, design) } catch { /* ignore */ }
+  }, [design])
 
   useEffect(() => {
     const onPop = () => setPath(currentPath())
@@ -359,7 +396,8 @@ function Site() {
   }, [path])
 
   function navigate(to: string) {
-    if (to !== window.location.pathname) window.history.pushState(null, '', to)
+    // Keep the query string so ?designs survives moving between pages.
+    if (to !== window.location.pathname) window.history.pushState(null, '', to + window.location.search)
     setPath(to)
     setMenuOpen(false)
     window.scrollTo(0, 0)
@@ -393,6 +431,7 @@ function Site() {
             <span>Nutrition coaching supports habits and does not replace medical care.</span>
           </div>
         </footer>
+        {showDesignSwitcher && <DesignSwitcher design={design} onChange={setDesign} />}
       </div>
     </NavigateContext.Provider>
   )
